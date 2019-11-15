@@ -5,7 +5,7 @@ const getMountains = () => {
 }
 
 const addPlace = (resort) => {
-    return db("mountains").insert(resort)
+    return db("mountains").insert(resort, "id")
 }
 
 module.exports = {
