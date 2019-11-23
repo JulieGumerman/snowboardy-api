@@ -8,7 +8,12 @@ const addPlace = (resort) => {
     return db("mountains").insert(resort, "id")
 }
 
+const removeMountain = (id) => {
+    return db("mountains").where({id}).delete();
+}
+
 module.exports = {
     getMountains,
-    addPlace
+    addPlace,
+    removeMountain
 }
