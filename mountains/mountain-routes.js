@@ -24,4 +24,11 @@ mountainRoute.delete("/:id", validate, (req, res) => {
         .catch(err => res.status(500).json(err))
 })
 
+mountainRoute.get("/:id", validate, (req, res) => {
+    const {id} = req.params;
+    Mountains.getMountainById(id)
+        .then(mntn => res.status(200).json(mntn))
+        .catch(err => res.status(500).json(err))
+})
+
 module.exports = mountainRoute;
