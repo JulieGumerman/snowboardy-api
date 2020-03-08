@@ -9,7 +9,13 @@ commentRoute.get("/", (req, res) => {
 })
 
 commentRoute.post("/", (req, res) => {
-
+    Comments.addComment(req.body)
+        .then(comment => 
+            res.status(200).json(comment)
+        )
+        .catch(err=> {
+            res.status(500).json(err)
+        })
 })
 
 
