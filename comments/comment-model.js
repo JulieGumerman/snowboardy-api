@@ -5,8 +5,8 @@ const getComments = () => {
 }
 
 //getCommentsById
-const getCommentsById = (id) => {
-    return db("comments").where({id}).delete()
+const getCommentsById = (mountain_id) => {
+    return db("comments").where("mountain_id", mountain_id).delete()
 }
 
 //addComment

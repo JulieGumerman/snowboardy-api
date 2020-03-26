@@ -12,7 +12,6 @@ server.use(express.json());
 server.use(cors());
 server.use("/api", userRoute);
 server.use("/api/mountains", mountainRoute)
-server.use("/api/comments", commentRoute)
 const port = process.env.PORT;
 
 server.listen(port, () => {

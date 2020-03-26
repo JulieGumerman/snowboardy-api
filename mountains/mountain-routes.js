@@ -31,4 +31,9 @@ mountainRoute.get("/:id", validate, (req, res) => {
         .catch(err => res.status(500).json(err))
 })
 
+//fix; needs a model
+
+
+//post; needs a model
+
 module.exports = mountainRoute;
