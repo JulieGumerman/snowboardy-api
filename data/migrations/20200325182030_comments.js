@@ -8,7 +8,7 @@ exports.up = function(knex) {
         table.integer("user_id")
             .references("id")
             .inTable("users")
-        table.text("comment", mediumtext)
+        table.text("comment")
             .notNullable()
     })
 };

@@ -1,13 +1,14 @@
 const db = require("../data/dbconfig")
 
 const getComments = () => {
-    return db("comments");
+    return db("comments")
 }
 
+
 //getCommentsById
-const getCommentsById = (mountain_id) => {
-    return db("comments").where("mountain_id", mountain_id).delete()
-}
+// const getCommentsById = (mountain_id) => {
+//     return db("comments").where("mountain_id", mountain_id).delete()
+// }
 
 //addComment
 const addComment = (comment) => {
@@ -16,6 +17,5 @@ const addComment = (comment) => {
 
 module.exports = {
     getComments,
-    getCommentsById,
     addComment
 }
