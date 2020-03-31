@@ -3,13 +3,9 @@ exports.up = function(knex) {
     return knex.schema.createTable("comments", table => {
         table.increments();
         table.integer("mountain_id")
-            .unsigned()
-            .notNullable()
             .references("id")
             .inTable("mountains")
         table.integer("user_id")
-            .unsigned()
-            .notNullable()
             .references("id")
             .inTable("users")
         table.text("comment")
@@ -18,5 +14,5 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-    return knex.schema.dropTableIfExists("comments")
+    return knex.schema.dropTableIfExits("comments");
 };

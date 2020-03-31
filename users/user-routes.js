@@ -9,6 +9,12 @@ userRoute.get("/", (req, res) => {
     res.send("Your mom.")
 })
 
+userRoute.get("/users", (req, res) => {
+    Users.getUsers()
+        .then(users => res.status(200).json(users))
+        .catch(err => res.status(500).json(err))
+})
+
 userRoute.post("/register", (req, res) => {
     let user = req.body;
     const hash = bcrypt.hashSync(user.password);

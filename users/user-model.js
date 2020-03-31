@@ -1,5 +1,9 @@
 const db = require("../data/dbconfig.js");
 
+const getUsers = () => {
+    return db("users");
+}
+
 const findById = (id) => {
     return db("users").where({id}).first();
 }
@@ -14,6 +18,7 @@ const findBy = filter => {
 }
 
 module.exports = {
+    getUsers,
     add,
     findBy
 };
