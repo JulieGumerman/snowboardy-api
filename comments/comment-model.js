@@ -5,11 +5,6 @@ const getComments = () => {
 }
 
 
-//getCommentsById
-// const getCommentsById = (mountain_id) => {
-//     return db("comments").where("mountain_id", mountain_id).delete()
-// }
-
 //addComment
 const addComment = (comment) => {
     return db("comments").insert(comment, "id")

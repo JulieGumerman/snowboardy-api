@@ -17,12 +17,7 @@ commentRoute.post("/", (req, res) => {
             res.status(500).json(err)
         })
 })
-// commentRoute.get("/:mountain_id", (req, res) => {
-//     const {mountain_id} = req.params;
-//     Comments.getCommentsById(mountain_id)
-//         .then(comments => res.status(200).json(comments))
-//         .catch(err => res.status(500).json(err))
-// })
+
 
 commentRoute.get(`/:id`, (req, res) => {
     const {mountain_id} = req.params;
