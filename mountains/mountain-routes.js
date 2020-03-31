@@ -34,7 +34,7 @@ mountainRoute.get("/:id", validate, (req, res) => {
         .catch(err => res.status(500).json(err))
 })
 
-mountainRoute.get("/:id/comments", (req, res) => {
+mountainRoute.get("/:id/comments", validate, (req, res) => {
     const {id} = req.params;
     Comments.getCommentsByMountainId(id)
         .then(mntncomments => res.status(200).json(mntncomments))

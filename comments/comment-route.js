@@ -1,6 +1,7 @@
 const express = require('express')
 const commentRoute = express.Router()
 const Comments = require("./comment-model")
+const validate = require("../middleware-and-auth/validate")
 
 commentRoute.get("/", (req, res) => {
     Comments.getComments()
@@ -8,7 +9,7 @@ commentRoute.get("/", (req, res) => {
         .catch(err => res.status(500).json(err))
 })
 
-commentRoute.post("/", (req, res) => {
+commentRoute.post("/", validate, (req, res) => {
     Comments.addComment(req.body)
         .then(comment => 
             res.status(200).json(comment)
