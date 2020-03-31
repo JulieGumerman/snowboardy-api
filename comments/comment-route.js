@@ -24,6 +24,13 @@ commentRoute.post("/", (req, res) => {
 //         .catch(err => res.status(500).json(err))
 // })
 
+commentRoute.get(`/:id`, (req, res) => {
+    const {mountain_id} = req.params;
+    Comments.getCommentsByMountainId(mountain_id)
+        .then(results => res.status(200).json({"message": "woot"}))
+        .catch(err => res.status(500).json(err))
+})
+
 
 module.exports = commentRoute
 
